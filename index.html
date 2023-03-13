@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Animação digitação</title>
+</head>
+<body>
+  <div class="wrapper">
+    <span class="text static-text">I am</span>
+    <span class="text dynamic-text"></span>
+  </div>
+
+  <script>
+    const text = document.querySelector('.dynamic-text');
+    const array = ['Developer', 'Frontend', 'Ui Design', 'Freelancer'];
+
+   
+    const textLoad = () => { 
+      array.forEach((item, index) => {
+      const temp = 4000 * index;
+       
+        setTimeout(() => {
+        text.textContent = item 
+        }, temp);
+      })
+      
+    }
+    textLoad();
+    setInterval(textLoad, 16000)
+  </script>
+</body>
+</html>
